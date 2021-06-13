@@ -1,56 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import Search from "./Search";
+import PhotoList from "./PhotoList";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <div className="container">
+        <div className="header">
+          <img
+            src="/img/HiPeople.jpeg"
+            alt="Person speaking to another over video software"
+            className="header-img"
+          />
+          <h1>HiPhotographers</h1>
+          <h2>
+            If you're looking for a photographer, look no further! Just search
+            for the subject you need captured on film.
+          </h2>
+        </div>
+        <div className="row">
+          <div className="col">
+            <Search />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <PhotoList />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
