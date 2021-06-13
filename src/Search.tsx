@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import { useAppDispatch } from "./app/hooks";
 import { setPhotos } from "./features/photos/photosSlice";
-import UNSPLASH_API_KEY from "./apikey.js";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("cat");
@@ -18,7 +17,7 @@ const Search = () => {
     // .catch((err) => {
     //   console.log("Error: ", err);
     // });
-    console.log(response.data);
+    // console.log(response.data);
 
     dispatch(setPhotos(response.data.results));
   };
