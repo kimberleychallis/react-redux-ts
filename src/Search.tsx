@@ -6,13 +6,13 @@ import { setPhotos } from "./features/photos/photosSlice";
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("cat");
   const unsplashAPI = `https://api.unsplash.com/search/photos?query=${searchTerm}&per_page=12&orientation=landscape`;
-  // const unsplashAPIKey = UNSPLASH_API_KEY;
+  const unsplashAPIKey = UNSPLASH_API_KEY;
 
   const dispatch = useAppDispatch();
 
   const fetchPhotos = async () => {
     const response: AxiosResponse = await axios.get(unsplashAPI, {
-      headers: { Authorization: `Client-ID ${UNSPLASH_API_KEY}` },
+      headers: { Authorization: `Client-ID ${unsplashAPIKey}` },
     });
     // .catch((err) => {
     //   console.log("Error: ", err);
