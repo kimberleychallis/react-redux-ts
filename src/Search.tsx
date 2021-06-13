@@ -2,17 +2,20 @@ import React, { useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import { useAppDispatch } from "./app/hooks";
 import { setPhotos } from "./features/photos/photosSlice";
+// import REACT_APP_UNSPLASH_API_KEY from "./apikey";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("cat");
   const unsplashAPI = `https://api.unsplash.com/search/photos?query=${searchTerm}&per_page=12&orientation=landscape`;
-  const unsplashAPIKey = UNSPLASH_API_KEY;
+  // const unsplashAPIKey = UNSPLASH_API_KEY;
 
   const dispatch = useAppDispatch();
 
   const fetchPhotos = async () => {
     const response: AxiosResponse = await axios.get(unsplashAPI, {
-      headers: { Authorization: `Client-ID ${unsplashAPIKey}` },
+      headers: {
+        Authorization: `Client-ID ${process.env.REACT_APP_UNSPLASH_API_KEY}`,
+      },
     });
     // .catch((err) => {
     //   console.log("Error: ", err);
